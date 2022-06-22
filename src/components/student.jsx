@@ -1,6 +1,5 @@
 import StudentList from "./studentList";
-import "../Boostrap/index.css";
-import useStudents from "./useStudent";
+import  {useStudents}  from "./useStudent";
 
 export default function Students() {
     const [students, name, rollno, batch, flag, updatedIndex, errorMessage, deleteHandler, updatehandler, ctaHandler, ctaUpdateHandler] = useStudents()
@@ -16,7 +15,7 @@ export default function Students() {
                         value={name}
                         placeholder="Please Enter Your Name"
                         name="name"
-                        onChange={(e) => setName(e.target.value)}
+                        // onChange={(e) => setName(e.target.value)}
                     />
                     <input
                         className="form-control m-4"
@@ -25,14 +24,14 @@ export default function Students() {
                         value={rollno}
                         placeholder="Please Enter Your Roll No"
                         name="name"
-                        onChange={(e) => setRollno(e.target.value)}
+                        // onChange={(e) => setRollno(e.target.value)}
                     />
                     <input
                         className="form-control m-4"
                         type="text"
                         value={batch}
                         placeholder="Please Enter Your Batch"
-                        onChange={(e) => setBatch(e.target.value)}
+                        // onChange={(e) => setBatch(e.target.value)}
                     />
                 </div>
 

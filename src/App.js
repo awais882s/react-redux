@@ -1,9 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
+import Students from "./components/student";
 function App() {
   return (
     <div className="App">
-      <h1>React + Redux </h1>
+      <Students />
     </div>
   );
 }

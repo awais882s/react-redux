@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import { data } from "./data";
-import "../Boostrap/index.css";
+// import { data } from "./data";
 
-export default function useStudents() {
-    const [students, setStudents] = useState(data);
+export function useStudents() {
+    const [students, setStudents] = useState(""); //data
     const [name, setName] = useState("");
     const [rollno, setRollno] = useState("");
     const [batch, setBatch] = useState("");
     const [flag, setFlag] = useState(false);
-    const [updatedIndex, setupdateIndex] = useState(0);
+    const [updatedIndex, setUpdateIndex] = useState(0);
     const [errorMessage, setMessage] = useState("");
 
     // }
@@ -27,7 +26,7 @@ export default function useStudents() {
     // for update items
     const updatehandler = (student, index) => {
         console.log("need to update stu", student);
-        setupdateIndex(index);
+        setUpdateIndex(index);
         setName(student.name);
         setRollno(student.rollno);
         setBatch(student.batch);
