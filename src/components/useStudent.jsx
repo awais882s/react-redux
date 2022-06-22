@@ -1,0 +1,92 @@
+import React, { useState } from "react";
+import { data } from "./data";
+import "../Boostrap/index.css";
+
+export default function useStudents() {
+    const [students, setStudents] = useState(data);
+    const [name, setName] = useState("");
+    const [rollno, setRollno] = useState("");
+    const [batch, setBatch] = useState("");
+    const [flag, setFlag] = useState(false);
+    const [updatedIndex, setupdateIndex] = useState(0);
+    const [errorMessage, setMessage] = useState("");
+
+    // }
+    const deleteHandler = (index) => {
+        console.log("index", index);
+
+        let newStudents = students.filter((student, i) => {
+            if (i !== index) {
+                return student;
+            }
+        });
+        setStudents([...newStudents]);
+        console.log("newstudents", newStudents);
+    };
+
+    // for update items
+    const updatehandler = (student, index) => {
+        console.log("need to update stu", student);
+        setupdateIndex(index);
+        setName(student.name);
+        setRollno(student.rollno);
+        setBatch(student.batch);
+        setFlag(true);
+    };
+
+    const ctaHandler = () => {
+        setMessage("");
+        if (name !== "" && batch !== "" && rollno !== "") {
+            let newStudent = {
+                name,
+                rollno,
+                batch,
+            };
+            console.log("New add Students", newStudent);
+            // new data add in student list
+            setStudents([newStudent, ...students]);
+
+            // for empty inputs
+            setName("");
+            setRollno("");
+            setBatch("");
+        } else {
+            setMessage("Found Few of Params empty! Params can,t empty");
+        }
+    };
+
+    // call to action for update handlers
+    const ctaUpdateHandler = () => {
+        setMessage("");
+        if (name !== "" && batch !== "" && rollno !== "") {
+            let student = {
+                name,
+                rollno,
+                batch,
+            };
+            console.log("New add Students", student);
+
+            let updatedStudents = students.map((stu, index) => {
+                if (updatedIndex === index) {
+                    return student;
+                } else {
+                    return student;
+                }
+            });
+            // new data add in student list
+            // setStudents([...students, newStudent]);
+            setStudents([...updatedStudents]);
+
+            // for empty inputs
+            setName("");
+            setRollno("");
+            setBatch("");
+            setFlag(false);
+        } else {
+            setMessage("Found Few of Params empty! Params can,t empty");
+        }
+    };
+
+    return ([students, name, rollno, batch, flag, updatedIndex, errorMessage, deleteHandler, updatehandler, ctaHandler, ctaUpdateHandler]
+    )
+}
