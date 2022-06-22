@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-// import { data } from "./data";
+import { data } from "./data"
 
 export function useStudents() {
-    const [students, setStudents] = useState(""); //data
+    const [students, setStudents] = useState(data);
     const [name, setName] = useState("");
     const [rollno, setRollno] = useState("");
     const [batch, setBatch] = useState("");
@@ -14,15 +14,28 @@ export function useStudents() {
     const deleteHandler = (index) => {
         console.log("index", index);
 
-        let newStudents = students.filter((student, i) => {
+        const newStudents = students.filter((student, i) => {
             if (i !== index) {
+                // console.log("this is delete ", index);
                 return student;
             }
         });
         setStudents([...newStudents]);
         console.log("newstudents", newStudents);
     };
+    // delete by name
+    // const deleteHandler = (name) => {
+    //   console.log("name", name);
 
+    //   let newStudents = students.filter((student, i) => {
+    //     if (student.name !== name) {
+    //       return student;
+    //     }
+
+    //   });
+    //   setStudents([...newStudents]);
+    //   console.log("newstudents", newStudents);
+    // };
     // for update items
     const updatehandler = (student, index) => {
         console.log("need to update stu", student);
@@ -41,9 +54,10 @@ export function useStudents() {
                 rollno,
                 batch,
             };
+            setStudents([newStudent, ...students]);
             console.log("New add Students", newStudent);
             // new data add in student list
-            setStudents([newStudent, ...students]);
+            // setStudents([...students, newStudent]);
 
             // for empty inputs
             setName("");
@@ -86,6 +100,6 @@ export function useStudents() {
         }
     };
 
-    return ([students, name, rollno, batch, flag, updatedIndex, errorMessage, deleteHandler, updatehandler, ctaHandler, ctaUpdateHandler]
+    return ([students, name, rollno, batch, flag, errorMessage, deleteHandler, updatehandler, ctaHandler, ctaUpdateHandler, setName, setRollno, setBatch,]
     )
 }
