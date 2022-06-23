@@ -18,7 +18,6 @@ export function useStudents() {
     const studentReducers = useSelector(state => state.studentReducers);
     console.log("StudentReducers", studentReducers);
 
-
     // end of store data
 
     const deleteHandler = (index) => {
