@@ -3,7 +3,9 @@ import { ToastContainer } from "react-toastify";
 import { useSelector } from "react-redux";
 import "./Boostrap/index.css";
 function App() {
-  const store = useSelector((store) => store);
+  const user = useSelector((store) => store.authReducers.user);
+  console.log("User", user);
+  const store = useSelector((store) => store.authReducers.user);
   console.log("store", store);
   return (
     <div className="App">
