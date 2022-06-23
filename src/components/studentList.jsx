@@ -10,7 +10,7 @@ export default function StudentList({ student, index, deleteHandler, updateHandl
                 <td>{student.class}</td>
                 <td>{student.roll}</td>
                 <td>
-                    <button className="btn btn-dark" onClick={() => deleteHandler(index)}>
+                    <button className="btn btn-danger" onClick={() => deleteHandler(index)}>
                         Delete
                     </button>
                 </td >

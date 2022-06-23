@@ -68,7 +68,7 @@ export default function Students() {
                 <h1 className=" d-flex justify-content-center align-items-center ">
                     List of Students
                 </h1>
-                <table class="table table-primary ms-4 ">
+                <table class="table table-warning ms-4 ">
                     <thead>
                         <tr>
                             <th>No:</th>
