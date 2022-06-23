@@ -1,5 +1,4 @@
 import Students from "./components/student";
-import "./App.css";
 function App() {
   return (
     <div className="App">
