@@ -2,7 +2,7 @@ import StudentList from "./studentList";
 import { useStudents } from "./useStudent";
 
 export default function Students() {
-    const [students, name, roll, Batch, flag, errorMessage, deleteHandler, updateHandler, ctaHandler, ctaUpdateHandler, setName, setRoll, setBatch,] = useStudents()
+    const [students, name, Batch, roll, stuClass, flag, errorMessage, deleteHandler, updateHandler, ctaHandler, ctaUpdateHandler, setName, setBatch, setRoll, setStuClass] = useStudents()
 
     return (
         <div className="container">
@@ -13,9 +13,16 @@ export default function Students() {
                         maxLength={20}
                         type="text"
                         value={name}
-                        placeholder="Please Enter Your Name"
+                        placeholder="Enter Your Name"
                         name="name"
                         onChange={(e) => setName(e.target.value)}
+                    />
+                    <input
+                        className="form-control m-4"
+                        type="text"
+                        value={Batch}
+                        placeholder="Enter Your Batch"
+                        onChange={(e) => setBatch(e.target.value)}
                     />
                     <input
                         className="form-control m-4"
@@ -29,10 +36,13 @@ export default function Students() {
                     <input
                         className="form-control m-4"
                         type="text"
-                        value={Batch}
-                        placeholder="Please Enter Your Batch"
-                        onChange={(e) => setBatch(e.target.value)}
+                        maxLength={8}
+                        value={stuClass}
+                        placeholder="Enter Your Class"
+                        name="name"
+                        onChange={(e) => setStuClass(e.target.value)}
                     />
+
                 </div>
 
                 {/* for using flag mtlb konsa button dikhana hai usko  */}
@@ -63,10 +73,10 @@ export default function Students() {
                     <thead>
                         <tr>
                             <th>No:</th>
-                            <th scope="col">Name:</th>
+                            <th scope="col">Name</th>
                             <th scope="col">Batch</th>
                             <th scope="col">Class</th>
-                            <th scope="col">RollNo:</th>
+                            <th scope="col">RollNo</th>
                             <th scope="col">Actions Perform</th>
                             <th scope="col">Update Item</th>
                         </tr>

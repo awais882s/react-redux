@@ -75,7 +75,7 @@ export function useStudents() {
     const ctaUpdateHandler = () => {
         setMessage("");
 
-        if (name != "" && Batch != "" && roll != "" && stuClass != "") {
+        if (name !== "" && Batch !== "" && roll !== "" && stuClass !== "") {
             let student = {
                 name,
                 batch: Batch,
