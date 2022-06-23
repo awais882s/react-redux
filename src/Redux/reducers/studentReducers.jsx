@@ -6,7 +6,7 @@ let initialState = {
     class: "1st",
     students: [],
 }
-function StudentReducers(state = initialState, action) {
+function studentReducers(state = initialState, action) {
     switch (action.type) {
         case "ADD_STUDENT":
             // work will / logic will here
@@ -24,4 +24,4 @@ function StudentReducers(state = initialState, action) {
 
 
 }
-export default StudentReducers;
+export default studentReducers;
