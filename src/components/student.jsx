@@ -53,18 +53,11 @@ export default function Students() {
                         Update
                     </button>
                 ) : (
-                    <button className="btn btn-warning w-98 ms-4" onClick={ctaHandler}>
+                    <button className="btn btn-dark w-80 ms-4" onClick={ctaHandler}>
                         Submit
                     </button>
                 )}
-
-                <p
-                    className="d-flex justify-content-center m-4 p-2 text-black"
-                    style={{ backgroundColor: "blue", color: "whitesmoke" }}
-                >
-                    {errorMessage}
-                </p>
-                <hr />
+                <br />
                 <h1 className=" d-flex justify-content-center align-items-center ">
                     List of Students
                 </h1>

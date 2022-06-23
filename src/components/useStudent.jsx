@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { data } from "./data"
+import { data } from "./data";
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+
 
 
 export function useStudents() {
     const [students, setStudents] = useState(data);
-    const [errorMessage, setMessage] = useState("");
     const [name, setName] = useState("");
     const [Batch, setBatch] = useState("");
     const [roll, setRoll] = useState("");
@@ -25,6 +27,15 @@ export function useStudents() {
 
         setStudents([...newStudents]);
         console.log("newStudents", newStudents);
+        toast.success('You Have Successfully deleted', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
     };
     // delete by name
     // const deleteHandler = (name) => {
@@ -51,8 +62,6 @@ export function useStudents() {
     };
 
     const ctaHandler = () => {
-        setMessage("");
-
         if (name !== "" && Batch !== "" && roll !== "" && stuClass !== "") {
             let student = {
                 name,
@@ -68,14 +77,21 @@ export function useStudents() {
             setStuClass("");
             setRoll("");
         } else {
-            setMessage(" Found few of params empty! Params can't be empty.");
+            toast.error('You Cannot Add empty Values', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
         }
         // new data add in student list
     };
 
     // call to action for update handlers
     const ctaUpdateHandler = () => {
-        setMessage("");
 
         if (name !== "" && Batch !== "" && roll !== "" && stuClass !== "") {
             let student = {
@@ -101,9 +117,17 @@ export function useStudents() {
             setRoll("");
             setFlag(false);
         } else {
-            setMessage(" Found few of params empty! Params can't be empty.");
+            toast.error('You Cannot Add empty Values', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
         }
     };
-    return ([students, name, Batch, roll, stuClass, flag, errorMessage, deleteHandler, updateHandler, ctaHandler, ctaUpdateHandler, setName, setBatch, setRoll, setStuClass]
+    return ([students, name, Batch, roll, stuClass, flag, deleteHandler, updateHandler, ctaHandler, ctaUpdateHandler, setName, setBatch, setRoll, setStuClass]
     )
 }
