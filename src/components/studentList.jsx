@@ -1,5 +1,5 @@
 import React from "react";
-export default function StudentList({ student, index, deleteHandler, updatehandler }) {
+export default function StudentList({ student, index, deleteHandler, updateHandler }) {
 
     return (
         <tbody>
@@ -14,7 +14,7 @@ export default function StudentList({ student, index, deleteHandler, updatehandl
                     </button>
                 </td>
                 <td>
-                    <button className="btn btn-primary" onClick={() => updatehandler(student, index)}>
+                    <button className="btn btn-primary" onClick={() => updateHandler(student, index)}>
                         Update Items
                     </button>
                 </td>

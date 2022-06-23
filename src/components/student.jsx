@@ -2,7 +2,7 @@ import StudentList from "./studentList";
 import { useStudents } from "./useStudent";
 
 export default function Students() {
-    const [students, name, rollno, batch, flag, errorMessage, deleteHandler, updatehandler, ctaHandler, ctaUpdateHandler, setName, setRollno, setBatch,] = useStudents()
+    const [students, name, roll, Batch, flag, errorMessage, deleteHandler, updateHandler, ctaHandler, ctaUpdateHandler, setName, setRoll, setBatch,] = useStudents()
 
     return (
         <div className="container">
@@ -21,15 +21,15 @@ export default function Students() {
                         className="form-control m-4"
                         type="text"
                         maxLength={8}
-                        value={rollno}
+                        value={roll}
                         placeholder="Please Enter Your Roll No"
                         name="name"
-                        onChange={(e) => setRollno(e.target.value)}
+                        onChange={(e) => setRoll(e.target.value)}
                     />
                     <input
                         className="form-control m-4"
                         type="text"
-                        value={batch}
+                        value={Batch}
                         placeholder="Please Enter Your Batch"
                         onChange={(e) => setBatch(e.target.value)}
                     />
@@ -64,8 +64,9 @@ export default function Students() {
                         <tr>
                             <th>No:</th>
                             <th scope="col">Name:</th>
-                            <th scope="col">RollNo:</th>
                             <th scope="col">Batch</th>
+                            <th scope="col">Class</th>
+                            <th scope="col">RollNo:</th>
                             <th scope="col">Actions Perform</th>
                             <th scope="col">Update Item</th>
                         </tr>
@@ -76,7 +77,7 @@ export default function Students() {
                                 index={index}
                                 student={item}
                                 deleteHandler={deleteHandler}
-                                updatehandler={updatehandler}
+                                updatehandler={updateHandler}
                             />
                         );
                     })}

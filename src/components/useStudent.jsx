@@ -9,7 +9,7 @@ export function useStudents() {
     const [roll, setRoll] = useState("");
     const [stuClass, setStuClass] = useState("");
     const [flag, setFlag] = useState(false);
-    const [updatedIndex, setUpdatedIndex] = useState(0);
+    const [updatedIndex, setUpdateIndex] = useState(0);
     // }
 
     const deleteHandler = (index) => {
@@ -102,6 +102,6 @@ export function useStudents() {
             setMessage(" Found few of params empty! Params can't be empty.");
         }
     };
-    return ([students, name, rollno, batch, flag, errorMessage, deleteHandler, updatehandler, ctaHandler, ctaUpdateHandler, setName, setRollno, setBatch,]
+    return ([students, name, Batch, roll, stuClass, flag, errorMessage, deleteHandler, updateHandler, ctaHandler, ctaUpdateHandler, setName, setBatch, setRoll, setStuClass]
     )
 }
