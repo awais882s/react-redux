@@ -3,7 +3,7 @@ import authReducer from "./authReducer";
 import studentReducers from "./studentReducers";
 const rootReducer = combineReducers({
     authReducer,
-    studentReducers 
+    studentReducers
 
 })
 export default rootReducer;
