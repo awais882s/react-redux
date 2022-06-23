@@ -2,8 +2,10 @@ import { useState } from "react";
 import { data } from "./data";
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
+import { useSelector } from "react-redux";
 
 export function useStudents() {
+
     const [students, setStudents] = useState(data);
     const [name, setName] = useState("");
     const [Batch, setBatch] = useState("");
@@ -11,6 +13,13 @@ export function useStudents() {
     const [stuClass, setStuClass] = useState("");
     const [flag, setFlag] = useState(false);
     const [updatedIndex, setUpdateIndex] = useState(0);
+
+    // store data 
+    const studentReducers = useSelector(state => state.studentReducers);
+    console.log("StudentReducers", studentReducers);
+
+
+    // end of store data
 
     const deleteHandler = (index) => {
         // console.log('name', stuname);
