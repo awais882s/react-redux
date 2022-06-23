@@ -2,7 +2,7 @@ import StudentList from "./studentList";
 import { useStudents } from "./useStudent";
 
 export default function Students() {
-    const [students, name, Batch, roll, stuClass, flag, errorMessage, deleteHandler, updateHandler, ctaHandler, ctaUpdateHandler, setName, setBatch, setRoll, setStuClass] = useStudents()
+    const [students, name, Batch, roll, stuClass, flag, deleteHandler, updateHandler, ctaHandler, ctaUpdateHandler, setName, setBatch, setRoll, setStuClass] = useStudents()
 
     return (
         <div className="container">

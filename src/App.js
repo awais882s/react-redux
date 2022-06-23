@@ -1,5 +1,5 @@
 import Students from "./components/student";
-import { ToastContainer} from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import "./Boostrap/index.css";
 function App() {
   return (

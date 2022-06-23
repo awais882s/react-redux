@@ -7,7 +7,6 @@ import { toast } from 'react-toastify';
 
 export function useStudents() {
     const [students, setStudents] = useState(data);
-    const [errorMessage, setMessage] = useState("");
     const [name, setName] = useState("");
     const [Batch, setBatch] = useState("");
     const [roll, setRoll] = useState("");
@@ -18,7 +17,6 @@ export function useStudents() {
 
     const deleteHandler = (index) => {
         // console.log('name', stuname);
-
         // eslint-disable-next-line array-callback-return
         let newStudents = students.filter((student, i) => {
             if (i !== index) {
@@ -72,8 +70,6 @@ export function useStudents() {
     };
 
     const ctaHandler = () => {
-        setMessage("");
-
         if (name !== "" && Batch !== "" && roll !== "" && stuClass !== "") {
             let student = {
                 name,
@@ -82,7 +78,6 @@ export function useStudents() {
                 class: stuClass,
             };
             console.log("student", student);
-
             setStudents([student, ...students,]);
             toast.warn('Your Recoed Has Been Submitted Success', {
                 position: "top-right",
@@ -113,8 +108,6 @@ export function useStudents() {
 
     // call to action for update handlers
     const ctaUpdateHandler = () => {
-        setMessage("");
-
         if (name !== "" && Batch !== "" && roll !== "" && stuClass !== "") {
             let student = {
                 name,
@@ -159,6 +152,6 @@ export function useStudents() {
             });
         }
     };
-    return ([students, name, Batch, roll, stuClass, flag, errorMessage, deleteHandler, updateHandler, ctaHandler, ctaUpdateHandler, setName, setBatch, setRoll, setStuClass]
+    return ([students, name, Batch, roll, stuClass, flag, deleteHandler, updateHandler, ctaHandler, ctaUpdateHandler, setName, setBatch, setRoll, setStuClass]
     )
 }
