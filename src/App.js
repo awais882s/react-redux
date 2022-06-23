@@ -1,4 +1,4 @@
-import Students from "./components/student";
+import Students from "./modules/student/student";
 import { ToastContainer } from 'react-toastify';
 import "./Boostrap/index.css";
 function App() {

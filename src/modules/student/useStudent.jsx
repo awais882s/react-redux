@@ -3,8 +3,6 @@ import { data } from "./data";
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
 
-
-
 export function useStudents() {
     const [students, setStudents] = useState(data);
     const [name, setName] = useState("");
@@ -13,7 +11,6 @@ export function useStudents() {
     const [stuClass, setStuClass] = useState("");
     const [flag, setFlag] = useState(false);
     const [updatedIndex, setUpdateIndex] = useState(0);
-    // }
 
     const deleteHandler = (index) => {
         // console.log('name', stuname);
