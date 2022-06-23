@@ -2,31 +2,37 @@ export const data = [
     {
         // id: "123",
         name: "awais",
-        rollno: 15424,
         batch: "7th semester",
+        class: "B.tech",
+        roll: 15424,
     },
     {
         // id: "1234",
         name: "Hamza",
-        rollno: 1542,
         batch: "7th semester",
+        class: "B.tech",
+        roll: 1542,
     },
     {
         // id: "1235",
         name: "Waqas Ahmad",
-        rollno: 15420,
         batch: "7th semester",
+        class: "B.tech",
+        roll: 15420,
     },
     {
         // id: "1232",
         name: "Razzaq Chuhan",
-        rollno: 15422,
         batch: "7th semester",
+        class: "B.tech",
+        roll: 15422,
+
     },
     {
         id: "1230",
         name: "Waqar Fayyaz",
-        rollno: 15423,
         batch: "7th semester",
+        class: "B.tech",
+        roll: 15423,
     },
 ];

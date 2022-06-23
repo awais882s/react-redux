@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { data } from "./data"
 
 export function useStudents() {
@@ -15,6 +15,7 @@ export function useStudents() {
     const deleteHandler = (index) => {
         // console.log('name', stuname);
 
+        // eslint-disable-next-line array-callback-return
         let newStudents = students.filter((student, i) => {
             if (i !== index) {
                 return student;
@@ -42,16 +43,16 @@ export function useStudents() {
         console.log("need to update stu ", student);
         setUpdateIndex(index);
         setName(student.name);
+        setBatch(student.batch);
         setStuClass(student.class);
         setRoll(student.roll);
-        setBatch(student.batch);
         setFlag(true);
     };
 
     const ctaHandler = () => {
         setMessage("");
 
-        if (name != "" && Batch != "" && roll != "" && stuClass != "") {
+        if (name !== "" && Batch !== "" && roll !== "" && stuClass !== "") {
             let student = {
                 name,
                 batch: Batch,
@@ -62,9 +63,9 @@ export function useStudents() {
 
             setStudents([...students, student]);
             setName("");
+            setBatch("");
             setStuClass("");
             setRoll("");
-            setBatch("");
         } else {
             setMessage(" Found few of params empty! Params can't be empty.");
         }
@@ -79,8 +80,8 @@ export function useStudents() {
             let student = {
                 name,
                 batch: Batch,
-                roll,
                 class: stuClass,
+                roll,
             };
             console.log("student", student);
 
@@ -94,9 +95,9 @@ export function useStudents() {
 
             setStudents([...updateStudents]);
             setName("");
+            setBatch("");
             setStuClass("");
             setRoll("");
-            setBatch("");
             setFlag(false);
         } else {
             setMessage(" Found few of params empty! Params can't be empty.");

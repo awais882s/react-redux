@@ -28,21 +28,20 @@ export default function Students() {
                         className="form-control m-4"
                         type="text"
                         maxLength={8}
-                        value={roll}
-                        placeholder="Please Enter Your Roll No"
-                        name="name"
-                        onChange={(e) => setRoll(e.target.value)}
-                    />
-                    <input
-                        className="form-control m-4"
-                        type="text"
-                        maxLength={8}
                         value={stuClass}
                         placeholder="Enter Your Class"
                         name="name"
                         onChange={(e) => setStuClass(e.target.value)}
                     />
-
+                    <input
+                        className="form-control m-4"
+                        type="text"
+                        maxLength={8}
+                        value={roll}
+                        placeholder="Enter Your Roll No"
+                        name="name"
+                        onChange={(e) => setRoll(e.target.value)}
+                    />
                 </div>
 
                 {/* for using flag mtlb konsa button dikhana hai usko  */}
@@ -87,7 +86,7 @@ export default function Students() {
                                 index={index}
                                 student={item}
                                 deleteHandler={deleteHandler}
-                                updatehandler={updateHandler}
+                                updateHandler={updateHandler}
                             />
                         );
                     })}
