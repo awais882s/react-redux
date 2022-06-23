@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 
 export function useStudents() {
     const [students, setStudents] = useState(data);
+    const [errorMessage, setMessage] = useState("");
     const [name, setName] = useState("");
     const [Batch, setBatch] = useState("");
     const [roll, setRoll] = useState("");
@@ -27,7 +28,7 @@ export function useStudents() {
 
         setStudents([...newStudents]);
         console.log("newStudents", newStudents);
-        toast.success('You Have Successfully deleted', {
+        toast.success('You Have Successfully', {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -59,9 +60,20 @@ export function useStudents() {
         setStuClass(student.class);
         setRoll(student.roll);
         setFlag(true);
+        toast.success('Record Selected', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
     };
 
     const ctaHandler = () => {
+        setMessage("");
+
         if (name !== "" && Batch !== "" && roll !== "" && stuClass !== "") {
             let student = {
                 name,
@@ -71,7 +83,16 @@ export function useStudents() {
             };
             console.log("student", student);
 
-            setStudents([...students, student]);
+            setStudents([student, ...students,]);
+            toast.warn('Your Recoed Has Been Submitted Success', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
             setName("");
             setBatch("");
             setStuClass("");
@@ -92,6 +113,7 @@ export function useStudents() {
 
     // call to action for update handlers
     const ctaUpdateHandler = () => {
+        setMessage("");
 
         if (name !== "" && Batch !== "" && roll !== "" && stuClass !== "") {
             let student = {
@@ -111,6 +133,15 @@ export function useStudents() {
             });
 
             setStudents([...updateStudents]);
+            toast.info('Information Has Been Updated Successfully', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
             setName("");
             setBatch("");
             setStuClass("");
@@ -128,6 +159,6 @@ export function useStudents() {
             });
         }
     };
-    return ([students, name, Batch, roll, stuClass, flag, deleteHandler, updateHandler, ctaHandler, ctaUpdateHandler, setName, setBatch, setRoll, setStuClass]
+    return ([students, name, Batch, roll, stuClass, flag, errorMessage, deleteHandler, updateHandler, ctaHandler, ctaUpdateHandler, setName, setBatch, setRoll, setStuClass]
     )
 }
