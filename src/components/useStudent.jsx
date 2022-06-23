@@ -3,25 +3,26 @@ import { data } from "./data"
 
 export function useStudents() {
     const [students, setStudents] = useState(data);
-    const [name, setName] = useState("");
-    const [rollno, setRollno] = useState("");
-    const [batch, setBatch] = useState("");
-    const [flag, setFlag] = useState(false);
-    const [updatedIndex, setUpdateIndex] = useState(0);
     const [errorMessage, setMessage] = useState("");
-
+    const [name, setName] = useState("");
+    const [Batch, setBatch] = useState("");
+    const [roll, setRoll] = useState("");
+    const [stuClass, setStuClass] = useState("");
+    const [flag, setFlag] = useState(false);
+    const [updatedIndex, setUpdatedIndex] = useState(0);
     // }
-    const deleteHandler = (index) => {
-        console.log("index", index);
 
-        const newStudents = students.filter((student, i) => {
+    const deleteHandler = (index) => {
+        // console.log('name', stuname);
+
+        let newStudents = students.filter((student, i) => {
             if (i !== index) {
-                // console.log("this is delete ", index);
                 return student;
             }
         });
+
         setStudents([...newStudents]);
-        console.log("newstudents", newStudents);
+        console.log("newStudents", newStudents);
     };
     // delete by name
     // const deleteHandler = (name) => {
@@ -37,69 +38,70 @@ export function useStudents() {
     //   console.log("newstudents", newStudents);
     // };
     // for update items
-    const updatehandler = (student, index) => {
-        console.log("need to update stu", student);
+    const updateHandler = (student, index) => {
+        console.log("need to update stu ", student);
         setUpdateIndex(index);
         setName(student.name);
-        setRollno(student.rollno);
+        setStuClass(student.class);
+        setRoll(student.roll);
         setBatch(student.batch);
         setFlag(true);
     };
 
     const ctaHandler = () => {
         setMessage("");
-        if (name !== "" && batch !== "" && rollno !== "") {
-            let newStudent = {
-                name,
-                rollno,
-                batch,
-            };
-            setStudents([newStudent, ...students]);
-            console.log("New add Students", newStudent);
-            // new data add in student list
-            // setStudents([...students, newStudent]);
 
-            // for empty inputs
+        if (name != "" && Batch != "" && roll != "" && stuClass != "") {
+            let student = {
+                name,
+                batch: Batch,
+                roll,
+                class: stuClass,
+            };
+            console.log("student", student);
+
+            setStudents([...students, student]);
             setName("");
-            setRollno("");
+            setStuClass("");
+            setRoll("");
             setBatch("");
         } else {
-            setMessage("Found Few of Params empty! Params can,t empty");
+            setMessage(" Found few of params empty! Params can't be empty.");
         }
+        // new data add in student list
     };
 
     // call to action for update handlers
     const ctaUpdateHandler = () => {
         setMessage("");
-        if (name !== "" && batch !== "" && rollno !== "") {
+
+        if (name != "" && Batch != "" && roll != "" && stuClass != "") {
             let student = {
                 name,
-                rollno,
-                batch,
+                batch: Batch,
+                roll,
+                class: stuClass,
             };
-            console.log("New add Students", student);
+            console.log("student", student);
 
-            let updatedStudents = students.map((stu, index) => {
+            let updateStudents = students.map((stu, index) => {
                 if (updatedIndex === index) {
                     return student;
                 } else {
-                    return student;
+                    return stu;
                 }
             });
-            // new data add in student list
-            // setStudents([...students, newStudent]);
-            setStudents([...updatedStudents]);
 
-            // for empty inputs
+            setStudents([...updateStudents]);
             setName("");
-            setRollno("");
+            setStuClass("");
+            setRoll("");
             setBatch("");
             setFlag(false);
         } else {
-            setMessage("Found Few of Params empty! Params can,t empty");
+            setMessage(" Found few of params empty! Params can't be empty.");
         }
     };
-
     return ([students, name, rollno, batch, flag, errorMessage, deleteHandler, updatehandler, ctaHandler, ctaUpdateHandler, setName, setRollno, setBatch,]
     )
 }
