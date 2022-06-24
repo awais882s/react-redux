@@ -9,7 +9,7 @@ let initialState = {
 function studentReducers(state = initialState, action) {
     switch (action.type) {
         case ADD_STUDENT:
-            console.log("data in reducers");
+            console.log("data in reducers from actions", action.payload);
             // work will / logic will here
             let newState = {
                 ...state,
