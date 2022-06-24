@@ -1,4 +1,4 @@
-
+import { ADD_STUDENT } from "../constants/type";
 
 let initialState = {
     name: "naveed",
@@ -8,7 +8,8 @@ let initialState = {
 }
 function studentReducers(state = initialState, action) {
     switch (action.type) {
-        case "ADD_STUDENT":
+        case ADD_STUDENT:
+            console.log("data in reducers");
             // work will / logic will here
             let newState = {
                 ...state,
