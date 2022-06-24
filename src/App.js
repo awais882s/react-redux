@@ -10,12 +10,19 @@ function App() {
   console.log("store", store);
   return (
     <div className="App">
+
       <h1 className="d-flex justify-content-center align-items-center">
         New Student Add
       </h1>
-      <Header />
       <ToastContainer />
       <Students />
+      {/* new data we fetch */}
+      <button>fetch follower</button>
+      <h1>Header</h1>
+      <Header />
+
+
+
     </div>
   );
 }
