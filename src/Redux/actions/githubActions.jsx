@@ -17,5 +17,4 @@ export const fetchFollowers = (data) => async (dispatch, previousState) => {
             payLoad: error,
         })
     }
-
 }
