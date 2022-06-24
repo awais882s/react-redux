@@ -17,6 +17,5 @@ function authReducers(state = intialState, action) {
         default:
             return state;
     }
-
 }
 export default authReducers;
