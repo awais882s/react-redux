@@ -1,4 +1,3 @@
-
 let intialState = {
     isLogin: true,
     user: { name: "Awais", email: "some@gmail.com" }
