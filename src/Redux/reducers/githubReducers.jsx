@@ -16,8 +16,7 @@ function githubReducers(state = initialState, action) {
             return newState
         case ERROR_GITHUB_FOLLOERS_API:
             console.log("data in reducers from actions", action.payload);
-            // work will / logic will here
-
+            // work will / logic will her
             return {
                 ...state,
                 error: action.payload
