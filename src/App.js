@@ -6,8 +6,8 @@ import { addStudent } from "./Redux/actions/studentActions";
 import "./Boostrap/index.css";
 function App() {
   const dispatch = useDispatch();
-  const user = useSelector((store) => store.authReducers.user);
-  console.log("User", user);
+  const name = useSelector((store) => store.studentReducers.name);
+  console.log("User", name);
   const store = useSelector((store) => store.authReducers.user);
   console.log("store", store);
   const ctaHandler = () => {
@@ -16,6 +16,7 @@ function App() {
       date: "2020-01-01",
       createdAt: new Date(),
     }
+    console.log("data in react component", dataPassToStore);
     dispatch(addStudent(dataPassToStore));
     // pass this data to action dataPassToStore
   }
@@ -31,6 +32,7 @@ function App() {
       <button onClick={ctaHandler}>fetch follower</button>
       <h1>Header</h1>
       <Header />
+      <p>Name from redux {name}</p>
 
 
 

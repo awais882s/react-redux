@@ -8,3 +8,4 @@ export const addStudent = (data) => {
         payLoad: data,
     }
 }
+
