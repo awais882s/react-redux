@@ -8,17 +8,14 @@ export const fetchFollowers = (data) => async (dispatch, previousState) => {
             type: GITHUB_FOLLOWERS_API,
             payLoad: followers
         })
-
         //    api request will be here
-
-    } catch (error) {
+    } 
+    catch (error) {
         console.log("error", error);
         dispatch({
             type: ERROR_GITHUB_FOLLOERS_API,
             payLoad: error,
         })
-
-
     }
 
 }
