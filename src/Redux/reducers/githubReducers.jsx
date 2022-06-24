@@ -14,7 +14,6 @@ function githubReducers(state = initialState, action) {
                 followers: action.payload
             }
             return newState
-
         case ERROR_GITHUB_FOLLOERS_API:
             console.log("data in reducers from actions", action.payload);
             // work will / logic will here
@@ -26,7 +25,5 @@ function githubReducers(state = initialState, action) {
         default:
             return state;
     }
-
-
 }
 export default githubReducers;
