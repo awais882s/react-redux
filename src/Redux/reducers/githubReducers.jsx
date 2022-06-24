@@ -1,11 +1,11 @@
-import { GITHUB_FOLLOERS_API, ERROR_GITHUB_FOLLOERS_API } from "../constants/type";
+import { GITHUB_FOLLOWERS_API, ERROR_GITHUB_FOLLOERS_API } from "../constants/type";
 let initialState = {
     followers: [],
     error: "",
 }
 function githubReducers(state = initialState, action) {
     switch (action.type) {
-        case GITHUB_FOLLOERS_API:
+        case GITHUB_FOLLOWERS_API:
             console.log("data in reducers from actions", action.payload);
             // work will / logic will here
             let newState = {
@@ -23,8 +23,6 @@ function githubReducers(state = initialState, action) {
                 ...state,
                 error: action.payload
             }
-
-
         default:
             return state;
     }

@@ -3,9 +3,10 @@ export const fetchFollowers = (data) => async (dispatch, previousState) => {
     try {
         let res = await fetch(`https://api.github.com/users/{$data}/followers`);
         console.log("res", res);
+        let followers = await res;
         dispatch({
             type: GITHUB_FOLLOWERS_API,
-            payLoad: res
+            payLoad: followers
         })
 
         //    api request will be here
