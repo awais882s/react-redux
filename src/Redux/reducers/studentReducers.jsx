@@ -1,5 +1,4 @@
 import { ADD_STUDENT } from "../constants/type";
-
 let initialState = {
     name: "naveed",
     age: 20,
@@ -17,12 +16,8 @@ function studentReducers(state = initialState, action) {
                 newData: action.payload
             }
             return newState
-
-
         default:
             return state;
     }
-
-
 }
 export default studentReducers;
