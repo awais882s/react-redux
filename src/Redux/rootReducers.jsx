@@ -6,6 +6,5 @@ const rootReducers = combineReducers({
     authReducers,
     studentReducers,
     githubReducers
-
 })
 export default rootReducers;

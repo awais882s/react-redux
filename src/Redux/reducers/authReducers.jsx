@@ -11,7 +11,6 @@ function authReducers(state = intialState, action) {
                 isLogin: true,
                 newData: action.payload
             }
-
             return newState
 
         default:

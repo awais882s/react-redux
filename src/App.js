@@ -34,12 +34,12 @@ function App() {
       </h1>
       <ToastContainer />
       <Students />
-      new data we fetch
+      {/* new data we fetch
       <button onClick={ctaHandler}>fetch follower</button>
       <h1>Header</h1>
       <Header />
       <p>Name from redux {store}</p>
-      <button onClick={ctaHandlerForGithub}>fetch Github Followers </button>
+      <button onClick={ctaHandlerForGithub}>fetch Github Followers </button> */}
     </div>
   );
 }
